@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dagger
   m_EditorClassIdentifier: 
   itemName: Dagger
-  icon: {fileID: 21300000, guid: a943c33871af14941a87a906ba793d74, type: 3}
+  icon: {fileID: 21300000, guid: b9ae6947e9852964da83c98c80e97c21, type: 3}
   description: 'Seeps the blood of its victims. ATK: +5'
   attack: 4

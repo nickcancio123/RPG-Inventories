@@ -4,18 +4,17 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
-public class Inventory_Visual : Inventory
+public class Visual_Inventory : Inventory
 {
     [SerializeField] Image hoveredItemImage;
     [SerializeField] TMP_Text hoveredItemName;
     [SerializeField] TMP_Text hoveredItemDescription;
 
+    protected override void OnStartHoveringSlot(ItemSlot _hoveredSlot) {
 
-    protected override void NewItemHovered(ItemSlot _hoveredItemSlot) {
+        base.OnStartHoveringSlot(_hoveredSlot);
 
-        base.NewItemHovered(_hoveredItemSlot);
-
-        Item_SO item = _hoveredItemSlot.GetItemType();
+        Item_SO item = _hoveredSlot.GetItemType();
 
         if (item == null) {
             hoveredItemImage.sprite = null;
