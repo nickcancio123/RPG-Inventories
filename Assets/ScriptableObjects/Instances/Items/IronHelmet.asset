@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Helmet
   icon: {fileID: 21300000, guid: 2417bfa5e4f867044abe8068bba0ce01, type: 3}
   description: 'Protects from the mightiest of blows. DEF: +6'
-  defense: 6
+  addStats: 000000000000000002000000
+  multStats: 010000000100000001000000

@@ -20,14 +20,14 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         UpdateDisplay();
     }
 
-    public void OnPointerEnter(PointerEventData eventData) {
+    public virtual void OnPointerEnter(PointerEventData pointerEventData) {
         if (hoverOnEvent != null)
             hoverOnEvent(this);
 
         isHoveringOverSlot = true;
     }
 
-    public void OnPointerExit(PointerEventData eventData) {
+    public virtual void OnPointerExit(PointerEventData pointerEventData) {
         isHoveringOverSlot = false;
     }
 

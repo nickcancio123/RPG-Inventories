@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Apple
   icon: {fileID: 21300000, guid: 411f33e060d42fa49915340ae7ee7f8d, type: 3}
   description: 'A crunchy fruit. HP: +4'
-  hungerFillAmount: 10
+  addStats: 020000000000000000000000
+  multStats: 010000000100000001000000

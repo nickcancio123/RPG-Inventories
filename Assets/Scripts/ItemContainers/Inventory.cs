@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public abstract class Inventory : ItemContainer
+public class Inventory : ItemContainer
 {
     // Tabs
     [SerializeField] int defaultTabOpen = 0;
     [SerializeField] protected List<Tab> tabs;
-
 
 
     protected virtual void Start() {
@@ -32,14 +31,10 @@ public abstract class Inventory : ItemContainer
     }
 
 
-
     public void OpenTab(Tab callingTab) {
         for (int i = 0; i < tabs.Count; i++) {
             bool open = callingTab == tabs[i];
             tabs[i].OpenCloseTab(open);
         }
     }
-
-
-
 }

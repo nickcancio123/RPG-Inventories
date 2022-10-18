@@ -59,13 +59,13 @@ public class ItemManager : MonoBehaviour
         ItemSlot hoveredSlot = GetHoveredSlot();
         if (hoveredSlot == null) 
             return;
-        
 
         grabbedItemImage.sprite = null;
 
-        bool dropSuccess = grabbedItemOriginalSlot.SetItemType(hoveredSlot.GetItemType());
+        Item_SO hoveredSlotItem = hoveredSlot.GetItemType();
+        bool dropSuccess = hoveredSlot.SetItemType(grabbedItem);
         if (dropSuccess)
-            hoveredSlot.SetItemType(grabbedItem);
+            grabbedItemOriginalSlot.SetItemType(hoveredSlotItem);
 
         grabbedItem = null;
         grabbedItemOriginalSlot = null;
@@ -73,12 +73,11 @@ public class ItemManager : MonoBehaviour
     void UpdateGrabbedItemImage() {
         grabbedItemImage.color = new Color(1, 1, 1, grabbingItem ? 1 : 0);
 
-        Vector2 mousePosRel = cam.ScreenToWorldPoint(Input.mousePosition) + cam.transform.forward;
+        Vector2 mousePosRel = cam.ScreenToWorldPoint(Input.mousePosition);
         grabbedItemImage.transform.position = mousePosRel + grabbedItemImageOffset;
     }
 
 
-    // Hovering
     ItemSlot GetHoveredSlot() {
         for (int i = 0; i < containers.Count; i++) {
             if (containers[i].IsHoveringOverContainer())
