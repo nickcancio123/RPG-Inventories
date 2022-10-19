@@ -12,7 +12,7 @@ public class ItemManager : MonoBehaviour
 
     [SerializeField] Camera cam;
 
-    [SerializeField] float mousePosScaleFactor = 1.925f;
+    const float mousePosScaleFactor = 1.925f;
 
     bool grabbingItem = false;
     Item_SO grabbedItem;

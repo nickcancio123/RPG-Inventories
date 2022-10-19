@@ -9,16 +9,11 @@ public class Tab : MonoBehaviour
     [SerializeField] Image handleImage;
     [SerializeField] GameObject body;
 
-    [SerializeField] Color openHandleColor;
-    [SerializeField] Color closedHandleColor;
-
     public List<ItemSlot> itemSlots;
 
     bool IsOpen;
 
 
-    public void OpenCloseTab(bool open) {
-        body.SetActive(open);
-        handleImage.color = open ? openHandleColor : closedHandleColor;
-    }
+    public void OpenCloseTab(bool open) => body.SetActive(open);
+    
 }
