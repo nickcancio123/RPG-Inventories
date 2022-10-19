@@ -12,9 +12,12 @@ public class ItemManager : MonoBehaviour
 
     [SerializeField] Camera cam;
 
+    [SerializeField] float mousePosScaleFactor = 1.925f;
+
     bool grabbingItem = false;
     Item_SO grabbedItem;
     ItemSlot grabbedItemOriginalSlot;
+
 
     protected void Update() {
 
@@ -73,8 +76,10 @@ public class ItemManager : MonoBehaviour
     void UpdateGrabbedItemImage() {
         grabbedItemImage.color = new Color(1, 1, 1, grabbingItem ? 1 : 0);
 
-        Vector2 mousePosRel = cam.ScreenToWorldPoint(Input.mousePosition);
-        grabbedItemImage.transform.position = mousePosRel + grabbedItemImageOffset;
+        Vector2 mouseScreenPos = Input.mousePosition;
+        Vector2 mousePosRel = cam.ScreenToWorldPoint(mouseScreenPos) * mousePosScaleFactor;
+        Vector3 targetPos = mousePosRel + grabbedItemImageOffset;
+        grabbedItemImage.rectTransform.localPosition = targetPos;
     }
 
 

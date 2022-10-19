@@ -4,36 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class HoveredItemDisplay : MonoBehaviour
+public class HoveredItemDisplay : ItemDisplay
 {
     [SerializeField] List<ItemContainer> containers;
 
-    [SerializeField] Image hoveredItemImage;
-    [SerializeField] TMP_Text hoveredItemName;
-    [SerializeField] TMP_Text hoveredItemDescription;
+    protected override void Update() {
 
-    Item_SO hoveredItemType;
-
-
-    void Update() {
-
-        ItemSlot hoveredSlot = GetHoveredSlot();
-        
-        if (hoveredSlot == null) {
-            DisplayNullItem();
-            return;
-        }
-
-        hoveredItemType = hoveredSlot.GetItemType();
-
-        if (hoveredItemType == null) {
-            DisplayNullItem();
-            return;
-        }
-
-        hoveredItemImage.sprite = hoveredItemType.icon;
-        hoveredItemName.text = hoveredItemType.itemName;
-        hoveredItemDescription.text = hoveredItemType.description;
+        slot = GetHoveredSlot();
+        base.Update();
     }
 
     ItemSlot GetHoveredSlot() {
@@ -42,12 +20,5 @@ public class HoveredItemDisplay : MonoBehaviour
                 return containers[i].GetHoveredSlot();
         }
         return null;
-    }
-
-
-    void DisplayNullItem() {
-        hoveredItemImage.sprite = null;
-        hoveredItemName.text = "";
-        hoveredItemDescription.text = "";
     }
 }
