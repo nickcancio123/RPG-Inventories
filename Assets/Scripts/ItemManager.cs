@@ -11,7 +11,6 @@ public class ItemManager : MonoBehaviour
     [SerializeField] Vector2 grabbedItemImageOffset;
 
     [SerializeField] Camera cam;
-    [SerializeField] Canvas canvas;
 
     [SerializeField] float mousePosScaleFactor = 1.925f;
 
