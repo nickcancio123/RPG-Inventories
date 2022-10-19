@@ -9,11 +9,11 @@ public class ClassSpecific_EquipmentSlot : ClassSpecific_ItemSlot
 
     public override bool SetItemType(Item_SO _itemType) {
 
-        base.SetItemType(_itemType);
+        bool successfulChange = base.SetItemType(_itemType);
 
         if (OnEquipped != null)
             OnEquipped();
 
-        return true;
+        return successfulChange;
     }
 }
