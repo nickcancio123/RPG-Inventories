@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b44c27508a774f4e987835537506a67, type: 3}
-  m_Name: Amulet
+  m_Name: Belt
   m_EditorClassIdentifier: 
-  itemName: Blue Stone of Aja
-  icon: {fileID: 21300000, guid: 0e123cfdc54a3ca4684816a34167a566, type: 3}
-  statDescription: 'ATK: +2   DEF: +2   AGL: +2 '
-  description: Turns its wearer into the ultimate life form
-  addStats: 020000000200000002000000
-  multStats: 010000000100000001000000
+  itemName: Belt of Providence
+  icon: {fileID: 21300000, guid: da09804303305f542a686824630e7269, type: 3}
+  statDescription: 'DEF: -1   DEF: x2'
+  description: Protected by the deity Raahl
+  addStats: 00000000ffffffff00000000
+  multStats: 010000000200000001000000

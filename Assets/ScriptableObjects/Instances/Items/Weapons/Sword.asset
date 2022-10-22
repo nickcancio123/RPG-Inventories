@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b44c27508a774f4e987835537506a67, type: 3}
-  m_Name: Axe
+  m_Script: {fileID: 11500000, guid: e1bd37c5e7bf8034184fcbca0e7ec6ba, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  itemName: Great Axe
-  icon: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
-  description: Can be used to fell giants.
-  addStats: 000000000000000000000000
+  itemName: Steel Sword
+  icon: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
+  statDescription: 'ATK: +3   AGL: +2'
+  description: A light yet robust blade
+  addStats: 030000000000000002000000
   multStats: 010000000100000001000000

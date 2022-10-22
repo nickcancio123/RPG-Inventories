@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Boots of Power
   icon: {fileID: 21300000, guid: e420c5bc93cb2604695a893500c897e3, type: 3}
+  statDescription: 'ATK: +3   DEF: +3'
   description: The source of The Great One's strength
-  addStats: 000000000000000000000000
+  addStats: 030000000300000000000000
   multStats: 010000000100000001000000

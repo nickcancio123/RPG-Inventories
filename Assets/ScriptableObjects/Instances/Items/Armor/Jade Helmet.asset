@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Jade Helmet
   icon: {fileID: 21300000, guid: fd6e4fc32c78509458fc45ea4a478ba8, type: 3}
-  description: 'Protects from the mightiest of blows. DEF: +3'
-  addStats: 000000000000000003000000
+  statDescription: 'DEF: +4   AGL: -1'
+  description: Protects from the mightiest of blows
+  addStats: 0000000004000000ffffffff
   multStats: 010000000100000001000000

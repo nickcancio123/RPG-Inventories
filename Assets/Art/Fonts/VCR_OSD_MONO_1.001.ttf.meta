@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4885e5a5b3cad794bb63beb6afa32f69
+guid: 05b620e359bf32c4890bebc6cd8a36d0
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Super Game Demo
+  - VCR OSD Mono
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

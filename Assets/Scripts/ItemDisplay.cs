@@ -35,7 +35,7 @@ public class ItemDisplay : MonoBehaviour
         }
 
         itemName.text = itemType.itemName;
-        itemDescription.text = itemType.description;
+        itemDescription.text = itemType.statDescription + "\n" + itemType.description;
     }
 
 
