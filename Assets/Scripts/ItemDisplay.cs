@@ -29,8 +29,10 @@ public class ItemDisplay : MonoBehaviour
             return;
         }
 
-        if (itemImage)
+        if (itemImage) {
+            itemImage.color = Color.white;
             itemImage.sprite = itemType.icon;
+        }
 
         itemName.text = itemType.itemName;
         itemDescription.text = itemType.description;
@@ -38,9 +40,11 @@ public class ItemDisplay : MonoBehaviour
 
 
     void DisplayNullItem() {
-        if (itemImage)
+        if (itemImage) {
             itemImage.sprite = null;
-        
+            itemImage.color = Color.clear;
+        }
+
         itemName.text = "";
         itemDescription.text = "";
     }
