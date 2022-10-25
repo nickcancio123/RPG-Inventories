@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Consumables Tab
       objectReference: {fileID: 0}
+    - target: {fileID: 203126041714205188, guid: a911381a59299284786f260211e63f75, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 306904794811823788, guid: a911381a59299284786f260211e63f75, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -5581,7 +5585,7 @@ PrefabInstance:
     - target: {fileID: 8656146101393040634, guid: a911381a59299284786f260211e63f75, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0e123cfdc54a3ca4684816a34167a566, type: 3}
+      objectReference: {fileID: 21300000, guid: ae496f5dad56ea645b72d374a0376368, type: 3}
     - target: {fileID: 8673504876300967891, guid: a911381a59299284786f260211e63f75, type: 3}
       propertyPath: targetClassInstance
       value: 
