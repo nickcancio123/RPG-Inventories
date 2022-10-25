@@ -9,15 +9,15 @@ public class PlayerEquipment : ItemContainer
     [SerializeField] List<ClassSpecific_EquipmentSlot> accessorySlots;
     [SerializeField] List<ClassSpecific_EquipmentSlot> consumableSlots;
 
-    [SerializeField] TMP_Text HP_StatText;
-    [SerializeField] TMP_Text ATK_StatText;
-    [SerializeField] TMP_Text DEF_StatText;
-
+    [SerializeField] TMP_Text ATK_StatText; // Attack 
+    [SerializeField] TMP_Text DEF_StatText; // Defense
+    [SerializeField] TMP_Text AGL_StatText; // Agility
+        
     List<ClassSpecific_EquipmentSlot> slots = new List<ClassSpecific_EquipmentSlot>();
 
-    public int HP = 1;
     public int ATK = 1;
     public int DEF = 1;
+    public int AGL = 1;
 
 
     protected new void OnEnable() {
@@ -63,9 +63,9 @@ public class PlayerEquipment : ItemContainer
     void ProcessEquipmentStats() {
 
         // Clear old stats
-        HP = 1;
         ATK = 1;
         DEF = 1;
+        AGL = 1;
 
         // Factor additive stats
         for (int i = 0; i < slots.Count; i++) {
@@ -73,9 +73,9 @@ public class PlayerEquipment : ItemContainer
             if (item == null)
                 continue;
 
-            HP += item.addStats[0];
-            ATK += item.addStats[1];
-            DEF += item.addStats[2];
+            ATK += item.addStats[0];
+            DEF += item.addStats[1];
+            AGL += item.addStats[2];
         }
 
         // Factor multiplicative stats
@@ -84,23 +84,18 @@ public class PlayerEquipment : ItemContainer
             if (item == null)
                 continue;
 
-            HP *= item.multStats[0];
-            ATK *= item.multStats[1];
-            DEF *= item.multStats[2];
+            ATK *= item.multStats[0];
+            DEF *= item.multStats[1];
+            AGL *= item.multStats[2];
         }
-
-        // Clamp stats between 1 and infinity
-        HP = HP < 1 ? 1 : HP;
-        ATK = ATK < 1 ? 1 : ATK;
-        DEF = DEF < 1 ? 1 : DEF;
 
         UpdateStatText();
     }
 
 
     void UpdateStatText() {
-        HP_StatText.text = HP.ToString();
         ATK_StatText.text = ATK.ToString();
         DEF_StatText.text = DEF.ToString();
+        AGL_StatText.text = AGL.ToString();
     }
 }

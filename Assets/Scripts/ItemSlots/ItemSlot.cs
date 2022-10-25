@@ -34,9 +34,11 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     protected void UpdateDisplay() {
         if (itemType == null) {
             itemIconDisplay.sprite = null;
+            itemIconDisplay.color = Color.clear;
             return;
         }
 
+        itemIconDisplay.color = Color.white;
         itemIconDisplay.sprite = itemType.icon;
     }
 
