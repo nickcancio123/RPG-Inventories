@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Golden Long Bow
   icon: {fileID: 21300000, guid: af8542c9049070a47aa03b08df0d06f7, type: 3}
-  statDescription: 'ATK: +4   AGL: -1'
+  statDescription: 'ATK: +5   AGL: -2'
   description: Only the strongest can wield it
-  addStats: 0400000000000000ffffffff
+  addStats: 0500000000000000feffffff
   multStats: 010000000100000001000000

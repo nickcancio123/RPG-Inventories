@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Golden Sword
   icon: {fileID: 21300000, guid: e9779752c95034748a0243dfca53808a, type: 3}
-  statDescription: 'ATK: +3   AGL: +2'
+  statDescription: 'ATK: +4   AGL: +1'
   description: A light yet robust blade
-  addStats: 030000000000000002000000
+  addStats: 040000000000000001000000
   multStats: 010000000100000001000000

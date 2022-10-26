@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Ring of Swiftness
   icon: {fileID: 21300000, guid: 970324311431c794ca338446ea889948, type: 3}
-  statDescription: 'ATK: -1   AGL: -1   AGL: x2'
+  statDescription: 'ATK: -2   AGL: x2'
   description: Grants its wearer unparalleled speed
-  addStats: ffffffff00000000ffffffff
+  addStats: feffffff0000000000000000
   multStats: 010000000100000002000000

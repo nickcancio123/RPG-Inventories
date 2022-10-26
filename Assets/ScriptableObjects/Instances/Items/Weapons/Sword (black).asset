@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black Steel Sword
   icon: {fileID: 21300000, guid: dde16877ae8ce7a41825506f68dfa8d2, type: 3}
-  statDescription: 'ATK: +3   AGL: +2'
+  statDescription: 'ATK: +2   AGL: +3'
   description: A light yet robust blade
-  addStats: 030000000000000002000000
+  addStats: 020000000000000003000000
   multStats: 010000000100000001000000

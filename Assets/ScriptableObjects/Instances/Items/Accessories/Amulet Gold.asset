@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Golden Stone of Aja
   icon: {fileID: 21300000, guid: 281032a9dff1188478bccc759c5ed5b0, type: 3}
-  statDescription: 'ATK: +2   DEF: +2   AGL: +2 '
+  statDescription: 'ATK: +2   DEF: +1   AGL: +2 '
   description: Turns its wearer into the ultimate life form
-  addStats: 020000000200000002000000
+  addStats: 020000000100000002000000
   multStats: 010000000100000001000000

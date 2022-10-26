@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Golden Book of Wrath
   icon: {fileID: 21300000, guid: 0c16236cdf934ba4d957689a4c05aec4, type: 3}
-  statDescription: 'ATK: +3   AGL:  -2'
+  statDescription: 'ATK: +2   AGL:  -1'
   description: A heafty scripture imbued with wrath
-  addStats: 0300000000000000feffffff
+  addStats: 0200000000000000ffffffff
   multStats: 010000000100000001000000

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black Great Axe
   icon: {fileID: 21300000, guid: bb10e2e2fa48d9e46841a2de80ae37a5, type: 3}
-  statDescription: 'ATK: +1   AGL: -2   ATK: x2'
+  statDescription: 'ATK: +2   AGL: -3   ATK: x2'
   description: Famously used to fell mountain giants
-  addStats: 0100000000000000feffffff
+  addStats: 0200000000000000fdffffff
   multStats: 020000000100000001000000

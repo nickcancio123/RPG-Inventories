@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bandit Cloak
   icon: {fileID: 21300000, guid: 6fc27c9d7fc2d9448af6851bf935e6d2, type: 3}
-  statDescription: 'DEF: +1   AGL: +2'
+  statDescription: 'DEF: +1   AGL: -1   AGL: x2'
   description: Great for stealth and agility
-  addStats: 000000000100000002000000
-  multStats: 010000000100000001000000
+  addStats: 0000000001000000ffffffff
+  multStats: 010000000100000002000000

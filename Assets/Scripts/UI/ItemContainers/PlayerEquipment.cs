@@ -117,7 +117,16 @@ public class PlayerEquipment : ItemContainer
     }
 
 
-    public int GetATK() => ATK;
-    public int GetDEF() => DEF;
-    public int GetAGL() => AGL;
+    public int GetATK() { 
+        ProcessEquipmentStats();
+        return ATK; 
+    }
+    public int GetDEF() { 
+        ProcessEquipmentStats();
+        return DEF; 
+    }
+    public int GetAGL() {
+        ProcessEquipmentStats();
+        return AGL; 
+    }
 }

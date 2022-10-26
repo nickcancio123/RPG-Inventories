@@ -2383,6 +2383,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1835631945}
     - target: {fileID: 5574755992834403902, guid: 4dad8bb993a699847b09bb7080cc4042, type: 3}
+      propertyPath: buildType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574755992834403902, guid: 4dad8bb993a699847b09bb7080cc4042, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1734987860}

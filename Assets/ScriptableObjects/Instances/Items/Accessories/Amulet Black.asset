@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black Stone of Aja
   icon: {fileID: 21300000, guid: 78f383c42b703f9418fccec800a61bed, type: 3}
-  statDescription: 'ATK: +2   DEF: +2   AGL: +2 '
+  statDescription: 'ATK: +1   DEF: +2   AGL: +2 '
   description: Turns its wearer into the ultimate life form
-  addStats: 020000000200000002000000
+  addStats: 010000000200000002000000
   multStats: 010000000100000001000000

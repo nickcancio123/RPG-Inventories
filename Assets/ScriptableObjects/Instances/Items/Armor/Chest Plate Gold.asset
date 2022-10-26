@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Golden Chest Plate
   icon: {fileID: 21300000, guid: 623463d46bfc2b042b54e1b132d4b29b, type: 3}
-  statDescription: 'DEF: -3   AGL: -3   DEF: x3'
+  statDescription: 'DEF: -2   AGL: -4   DEF: x3'
   description: Made from the hide of 5 Whooly Hippos
-  addStats: 00000000fdfffffffdffffff
+  addStats: 00000000fefffffffcffffff
   multStats: 010000000300000001000000
