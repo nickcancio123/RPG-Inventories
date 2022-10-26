@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class PlayerEquipment : ItemContainer
 {
@@ -15,9 +17,9 @@ public class PlayerEquipment : ItemContainer
         
     List<ClassSpecific_EquipmentSlot> slots = new List<ClassSpecific_EquipmentSlot>();
 
-    public int ATK = 1;
-    public int DEF = 1;
-    public int AGL = 1;
+    int ATK = 1;
+    int DEF = 1;
+    int AGL = 1;
 
 
     protected new void OnEnable() {
@@ -25,13 +27,12 @@ public class PlayerEquipment : ItemContainer
         StartListenSlotHover();
         ProcessEquipmentStats();
     }
-    protected new void OnDisable() {
-        StopListenSlotHover();
-    }
 
 
     // Make a list of all slots, regardless of subclass
     void AggregateSlots() {
+        slots.Clear();
+
         for (int i = 0; i < armorSlots.Count; i++) 
             slots.Add(armorSlots[i]);
 
@@ -54,14 +55,13 @@ public class PlayerEquipment : ItemContainer
     // Also stops listening for OnEquipped
     protected override void StopListenSlotHover() {
         for (int i = 0; i < slots.Count; i++) {
-            slots[i].hoverOnEvent += OnStartHoveringSlot;
+            slots[i].hoverOnEvent -= OnStartHoveringSlot;
             slots[i].OnEquipped -= ProcessEquipmentStats;
         }
     }
 
 
     void ProcessEquipmentStats() {
-
         // Clear old stats
         ATK = 1;
         DEF = 1;
@@ -92,10 +92,32 @@ public class PlayerEquipment : ItemContainer
         UpdateStatText();
     }
 
-
     void UpdateStatText() {
         ATK_StatText.text = ATK.ToString();
         DEF_StatText.text = DEF.ToString();
         AGL_StatText.text = AGL.ToString();
     }
+
+
+    public override List<ItemSlot> GetItemSlots() {
+        List<ItemSlot> itemSlots = new List<ItemSlot>();
+        for (int i = 0; i < slots.Count; i++) 
+            itemSlots.Add(slots[i]);
+       
+        return itemSlots;
+    }
+
+
+    public bool IsItemTypeEquipped(Item_SO itemType) {
+        for (int i = 0; i < slots.Count; i++) {
+            if (slots[i].GetItemType() == itemType)
+                return true;
+        }
+        return false;
+    }
+
+
+    public int GetATK() => ATK;
+    public int GetDEF() => DEF;
+    public int GetAGL() => AGL;
 }

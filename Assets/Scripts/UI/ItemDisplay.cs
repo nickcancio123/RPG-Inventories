@@ -38,7 +38,6 @@ public class ItemDisplay : MonoBehaviour
         itemDescription.text = itemType.statDescription + "\n" + itemType.description;
     }
 
-
     void DisplayNullItem() {
         if (itemImage) {
             itemImage.sprite = null;
@@ -48,4 +47,6 @@ public class ItemDisplay : MonoBehaviour
         itemName.text = "";
         itemDescription.text = "";
     }
+
+    public Item_SO GetDisplayedItem() => itemType;
 }

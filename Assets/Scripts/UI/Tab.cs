@@ -13,7 +13,6 @@ public class Tab : MonoBehaviour
 
     bool IsOpen;
 
-
     public void OpenCloseTab(bool open) => body.SetActive(open);
     
 }

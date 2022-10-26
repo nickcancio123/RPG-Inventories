@@ -7,8 +7,8 @@ public abstract class ItemContainer : MonoBehaviour
     protected ItemSlot hoveredSlot;
 
 
-    protected void OnEnable() => StartListenSlotHover();
-    protected void OnDisable() => StopListenSlotHover();
+    protected virtual void OnEnable() => StartListenSlotHover();
+    protected virtual void OnDisable() => StopListenSlotHover();
 
 
     protected virtual void StartListenSlotHover() { }
@@ -29,5 +29,7 @@ public abstract class ItemContainer : MonoBehaviour
 
         return hoveredSlot.IsHoveringOverSlot();
     }
+
+    public virtual List<ItemSlot> GetItemSlots() => null;
 
 }
