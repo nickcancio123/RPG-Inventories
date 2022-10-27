@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black Belt of Providence
   icon: {fileID: 21300000, guid: c19398230658b5641b31df54822e7c47, type: 3}
-  statDescription: 'DEF: -1   DEF: x2'
+  statDescription: 'DEF: x2'
   description: Protected by the deity Raahl
-  addStats: 00000000ffffffff00000000
+  addStats: 000000000000000000000000
   multStats: 010000000200000001000000

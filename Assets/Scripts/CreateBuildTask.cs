@@ -16,19 +16,23 @@ public class CreateBuildTask : MonoBehaviour
     [SerializeField] Tab armorTab;
     [SerializeField] Tab weaponsTab;
     [SerializeField] Tab accessoriesTab;
+    [SerializeField] EBuildType buildType;
 
     [Header("Task UI")]
 
-    [SerializeField] GameObject taskUIBody;
-    [SerializeField] GameObject startButton;
+    [SerializeField] GameObject preTaskUI;
+    [SerializeField] GameObject postTaskUI;
+
     [SerializeField] GameObject finishButton;
+
     [SerializeField] TMP_Text taskTimeText;
     [SerializeField] TMP_Text maxBuildStatText;
     [SerializeField] TMP_Text userBuildStatText;
+
+    [SerializeField] TMP_Text buildTypeText0;
     [SerializeField] TMP_Text buildTypeText1;
     [SerializeField] TMP_Text buildTypeText2;
 
-    [SerializeField] EBuildType buildType;
 
 
     float taskTime = 0;
@@ -40,53 +44,58 @@ public class CreateBuildTask : MonoBehaviour
 
     void Start() {
         // Show and hide elements
-        taskUIBody.gameObject.SetActive(true);
-        inventory.gameObject.SetActive(false);
-        finishButton.gameObject.SetActive(false);
+        preTaskUI.SetActive(true);
+
+        inventory.SetActive(false);
+        finishButton.SetActive(false);
+        postTaskUI.SetActive(false);
 
         // Set text values
+        buildTypeText0.text = buildType.ToString();
         buildTypeText1.text = buildType.ToString();
         buildTypeText2.text = buildType.ToString();
     }
 
     public void StartTask() {
+
         taskTime = 0;
         taskStartTime = Time.time;
 
         ComputeMaxBuildStat();
 
         // Show and hide elements
-        taskUIBody.gameObject.SetActive(false);
-        finishButton.gameObject.SetActive(true);
-        inventory.gameObject.SetActive(true);
+        preTaskUI.SetActive(false);
+
+        finishButton.SetActive(true);
+        inventory.SetActive(true);
     }
 
     public void EndTask() {
 
         // Show and hide elements
-        taskUIBody.gameObject.SetActive(true);
-        finishButton.gameObject.SetActive(false);
-        inventory.gameObject.SetActive(false);
+        finishButton.SetActive(false);
+        inventory.SetActive(false);
+
+        postTaskUI.SetActive(true);
 
         // Set text values
         taskTime = Time.time - taskStartTime;
+        taskTime = Mathf.Round(taskTime * 100) / 100;
         taskTimeText.text = taskTime.ToString();
 
         maxBuildStatText.text = maxBuildStat.ToString();
         
-        switch(userBuildStat) {
-            case (int)EBuildType.ATK:
+        switch(buildType) {
+            case EBuildType.ATK:
                 userBuildStat = playerEquipment.GetATK();
                 break;
-            case (int)EBuildType.DEF:
+            case EBuildType.DEF:
                 userBuildStat = playerEquipment.GetDEF();
                 break;
-            case (int)EBuildType.AGL:
+            case EBuildType.AGL:
                 userBuildStat = playerEquipment.GetAGL();
                 break;
         }
-        print("User made stat: " + userBuildStat);
-
         userBuildStatText.text = userBuildStat.ToString();
     }
 
@@ -159,8 +168,6 @@ public class CreateBuildTask : MonoBehaviour
             addStat += bestSet[a].GetItemType().addStats[(int)buildType];
             multStat *= bestSet[a].GetItemType().multStats[(int)buildType];
         }
-
-        print("Final:  " + bestSet[0].GetItemType() + " " + bestSet[1].GetItemType() + " " + bestSet[2].GetItemType() + "   Add: " + addStat + "   Mult: " + multStat);
 
         return;
     }

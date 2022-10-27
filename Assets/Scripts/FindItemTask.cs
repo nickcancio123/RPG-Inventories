@@ -6,12 +6,16 @@ using TMPro;
 public class FindItemTask : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
-    [SerializeField] GameObject startButton;
     [SerializeField] PlayerEquipment playerEquipment;
+    [SerializeField] Item_SO targetItemType;
+
+    [Header("Task UI")]
+    [SerializeField] GameObject preTaskUI;
+    [SerializeField] GameObject postTaskUI;
 
     [SerializeField] TMP_Text taskTimeText;
+    [SerializeField] TMP_Text targetItemNameText;
 
-    [SerializeField] Item_SO targetItemType;
 
     float taskTime = 0;
     float taskStartTime = 0;
@@ -20,8 +24,12 @@ public class FindItemTask : MonoBehaviour
 
 
     void Start() {
-        if (inventory)
-            inventory.gameObject.SetActive(false);
+        inventory.gameObject.SetActive(false);
+        postTaskUI.SetActive(false);
+
+        preTaskUI.SetActive(true);
+
+        targetItemNameText.text = targetItemType.itemName;
     }
 
     public void StartTask() {
@@ -29,28 +37,26 @@ public class FindItemTask : MonoBehaviour
         taskStartTime = Time.time;
         taskStarted = true;
 
-        if (inventory)
-            inventory.SetActive(true);
+        preTaskUI.SetActive(false);
+        inventory.SetActive(true);
     }
 
     void Update() {
-        if (taskStarted) {
-            if (playerEquipment)
-                if (playerEquipment.IsItemTypeEquipped(targetItemType))
-                    EndTask();
-        }
+
+        if (taskStarted)
+            if (playerEquipment.IsItemTypeEquipped(targetItemType))
+                EndTask();
     }
 
     public void EndTask() {
 
         taskStarted = false;
         
-        if (inventory)
-            inventory.SetActive(false);
-      
-        taskTime = Time.time - taskStartTime;
+        inventory.SetActive(false);
+        postTaskUI.SetActive(true);
 
-        if (taskTimeText)
-            taskTimeText.text = taskTime.ToString();
+        taskTime = Time.time - taskStartTime;
+        taskTime = Mathf.Round(taskTime * 100) / 100;
+        taskTimeText.text = taskTime.ToString();
     }
 }
